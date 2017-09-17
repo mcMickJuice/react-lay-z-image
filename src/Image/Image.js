@@ -1,75 +1,43 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-// import styled from "styled-components";
-import throttle from "lodash/throttle";
-
-// const ImageElement = styled.img`
-// opacity: ${props => (props.isHidden ? 0 : 1)};
-// transition: opacity 0.5s ease-in;
-// `;
-
-function isWithinViewRange(elementTop, elementBottom, offsetThreshold) {
-  const topEdge = window.pageYOffset;
-  const bottomEdge = window.pageYOffset + window.innerHeight;
-
-  const upperBound = topEdge - offsetThreshold;
-  const lowerBound = bottomEdge + offsetThreshold;
-
-  return elementBottom > upperBound && elementTop < lowerBound;
-}
-
-
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Image extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.onImageLoaded = this.onImageLoaded.bind(this);
-    this.onImageError = this.onImageError.bind(this);
-    this.onImageInRange = this.onImageInRange.bind(this);
+    this.onImageLoaded = this.onImageLoaded.bind(this)
+    this.onImageError = this.onImageError.bind(this)
 
     this.state = {
       showImage: false
-    };
+    }
   }
 
   onImageLoaded() {
-    setTimeout(() => {
-      this.setState({
-        showImage: true
-      });
-    }, 400);
+    this.setState({
+      showImage: true
+    })
   }
 
   onImageError() {
-    console.log("image errored out");
-  }
-
-  onImageInRange() {
-    this.setState({
-      injectImage: true
-    });
+    console.log('image errored out')
   }
 
   render() {
-    const {
-      imageSource,
-      alternateText,
-      errorImage,
-      ...otherProps
-    } = this.props;
+    const { imageSource, alternateText, errorImage, ...otherProps } = this.props
 
-    const { showImage } = this.state;
+    const { showImage } = this.state
 
-    return (<img
-          isHidden={!showImage}
-          className={`fade ${showImage ? "fade-in" : ""}`}
-          {...otherProps}
-          alt={alternateText}
-          src={imageSource}
-          onLoad={this.onImageLoaded}
-          onError={this.onImageError}
-        />)
+    return (
+      <img
+        className={`fade ${showImage ? 'fade-in' : ''}`}
+        {...otherProps}
+        alt={alternateText}
+        src={imageSource}
+        onLoad={this.onImageLoaded}
+        onError={this.onImageError}
+      />
+    )
   }
 }
 
@@ -78,10 +46,10 @@ Image.propTypes = {
   alternateText: PropTypes.string.isRequired,
   errorImage: PropTypes.string,
   delay: PropTypes.number
-};
+}
 
 Image.defaultProps = {
   errorImage: null
-};
+}
 
-export default Image;
+export default Image

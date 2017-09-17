@@ -8,9 +8,16 @@
     "react": "^15.6.1",
     "react-dom": "15.5.3"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
     "enzyme": "^2.9.1",
+    "eslint": "^4.7.0",
+    "jest": "^21.1.0",
     "react-test-renderer": "^15.6.1"
   }
 }
