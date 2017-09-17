@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+// import styled from "styled-components";
 import throttle from "lodash/throttle";
 
-const ImageElement = styled.img`
-opacity: ${props => (props.isHidden ? 0 : 1)};
-transition: opacity 0.5s ease-in;
-`;
+// const ImageElement = styled.img`
+// opacity: ${props => (props.isHidden ? 0 : 1)};
+// transition: opacity 0.5s ease-in;
+// `;
 
 function isWithinViewRange(elementTop, elementBottom, offsetThreshold) {
   const topEdge = window.pageYOffset;
@@ -27,7 +27,6 @@ class Image extends Component {
     this.onImageLoaded = this.onImageLoaded.bind(this);
     this.onImageError = this.onImageError.bind(this);
     this.onImageInRange = this.onImageInRange.bind(this);
-    // this.onScroll = this.onScroll.bind(this);
 
     this.state = {
       showImage: false
@@ -57,13 +56,12 @@ class Image extends Component {
       imageSource,
       alternateText,
       errorImage,
-      delay,
       ...otherProps
     } = this.props;
 
-    const { showImage, injectImage } = this.state;
+    const { showImage } = this.state;
 
-    return (<ImageElement
+    return (<img
           isHidden={!showImage}
           className={`fade ${showImage ? "fade-in" : ""}`}
           {...otherProps}
@@ -83,10 +81,7 @@ Image.propTypes = {
 };
 
 Image.defaultProps = {
-  lazy: false,
-  errorImage: null,
-  delay: 200,
-  lazyThresholdPercent: 20
+  errorImage: null
 };
 
 export default Image;
