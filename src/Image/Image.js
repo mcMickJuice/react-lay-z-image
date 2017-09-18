@@ -9,7 +9,8 @@ class Image extends Component {
     this.onImageError = this.onImageError.bind(this)
 
     this.state = {
-      showImage: false
+      showImage: false,
+      hasError: false
     }
   }
 
@@ -20,20 +21,29 @@ class Image extends Component {
   }
 
   onImageError() {
-    console.log('image errored out')
+    this.setState({
+      hasError: true
+    })
   }
 
   render() {
-    const { imageSource, alternateText, errorImage, ...otherProps } = this.props
+    const {
+      imageSource,
+      alternateText,
+      errorImageSource,
+      ...otherProps
+    } = this.props
 
-    const { showImage } = this.state
+    const { showImage, hasError } = this.state
+
+    const src = errorImageSource && hasError ? errorImageSource : imageSource
 
     return (
       <img
         className={`fade ${showImage ? 'fade-in' : ''}`}
         {...otherProps}
         alt={alternateText}
-        src={imageSource}
+        src={src}
         onLoad={this.onImageLoaded}
         onError={this.onImageError}
       />
@@ -44,12 +54,11 @@ class Image extends Component {
 Image.propTypes = {
   imageSource: PropTypes.string.isRequired,
   alternateText: PropTypes.string.isRequired,
-  errorImage: PropTypes.string,
-  delay: PropTypes.number
+  errorImageSource: PropTypes.string
 }
 
 Image.defaultProps = {
-  errorImage: null
+  errorImageSource: null
 }
 
 export default Image
