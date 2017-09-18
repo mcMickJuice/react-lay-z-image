@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from './Image'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 
 const defaultProps = {
   imageSource: 'www.src.com',
@@ -9,7 +9,7 @@ const defaultProps = {
 
 describe('Image', () => {
   it('should set state to showImage=true on onLoad', () => {
-    const wrapper = mount(<Image {...defaultProps} />)
+    const wrapper = shallow(<Image {...defaultProps} />)
 
     const image = wrapper.find('img')
 
@@ -19,7 +19,7 @@ describe('Image', () => {
   })
 
   it('should show error img if on error', () => {
-    const wrapper = mount(<Image {...defaultProps} />)
+    const wrapper = shallow(<Image {...defaultProps} />)
 
     const image = wrapper.find('img')
 
@@ -31,7 +31,7 @@ describe('Image', () => {
   it('should show img with error src on Error and errorImageSource provided', () => {
     const errorImageSource = 'error.png'
     const props = { ...defaultProps, errorImageSource }
-    const wrapper = mount(<Image {...props} />)
+    const wrapper = shallow(<Image {...props} />)
 
     wrapper
       .find('img')
@@ -44,7 +44,7 @@ describe('Image', () => {
   })
 
   it('should show img with imageSource if error and no errorImageSource provided', () => {
-    const wrapper = mount(<Image {...defaultProps} />)
+    const wrapper = shallow(<Image {...defaultProps} />)
 
     wrapper
       .find('img')
