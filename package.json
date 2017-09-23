@@ -1,7 +1,7 @@
 {
   "name": "react-lay-z-image",
   "description": "fade in image on load, show custom error image on error, dont load image until within view",
-  "version": "0.0.62",
+  "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
     "lodash.throttle": "^4.1.1"
@@ -10,19 +10,19 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "react":">=15",
-    "prop-types": ">=15"
+    "prop-types": ">=15",
+    "react": ">=15"
   },
   "devDependencies": {
-    "prop-types": "15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "15.5.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^2.9.1",
     "eslint": "^4.7.0",
     "jest": "^21.1.0",
+    "prop-types": "15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "15.5.3",
     "react-test-renderer": "^15.6.1"
   }
 }
