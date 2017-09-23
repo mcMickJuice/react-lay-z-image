@@ -2,16 +2,21 @@
   "name": "lazy-image-loader",
   "description": "fade in image on load, show custom error image on error, dont load image until within view",
   "version": "0.0.62",
+  "license": "MIT",
   "dependencies": {
-    "lodash.throttle": "^4.1.1",
-    "prop-types": "15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "15.5.3"
+    "lodash.throttle": "^4.1.1"
   },
   "scripts": {
     "test": "jest"
   },
+  "peerDependencies": {
+    "react":">=15",
+    "prop-types": ">=15"
+  },
   "devDependencies": {
+    "prop-types": "15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "15.5.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",

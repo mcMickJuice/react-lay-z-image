@@ -54,7 +54,8 @@ describe('LazyImage', () => {
       expect(wrapper.state().showImage).toBe(false)
     })
   })
-
+  
+  //not sure how I can simulate this....
   describe('on scroll', () => {
     let Container = () => (
       <div>
@@ -67,12 +68,13 @@ describe('LazyImage', () => {
       window.innerHeight = 768
     })
 
-    it('should set showImage to true if Image is scrolled into viewPort', () => {
-      // const wrapper = mount(<Container />)
-      // expect(wrapper.state().showImage).toBe(false)
-    })
-    it(
-      'should not set showImage to true if scroll but image is not in viewPort'
-    )
+    // it('should set showImage to true if Image is scrolled into viewPort', () => {
+    //   const wrapper = mount(<LazyImage style={{ marginTop: 1000 }} {...defaultProps} />)
+    //   expect(wrapper.state().showImage).toBe(false)
+    // })
+    // it(
+    //   'should not set showImage to true if scroll but image is not in viewPort'
+    // )
+
   })
 })
