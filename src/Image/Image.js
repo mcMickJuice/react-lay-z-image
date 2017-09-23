@@ -31,6 +31,7 @@ class Image extends Component {
       imageSource,
       alternateText,
       errorImageSource,
+      className,
       ...otherProps
     } = this.props
 
@@ -40,7 +41,7 @@ class Image extends Component {
 
     return (
       <img
-        className={`fade ${showImage ? 'fade-in' : ''}`}
+        className={`fade ${showImage ? 'fade-in' : ''} ${className}`}
         {...otherProps}
         alt={alternateText}
         src={src}

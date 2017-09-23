@@ -1,2 +1,2 @@
-export {default as Image} from './Image'
-export {default as LazyImage} from './LazyImage'
+export {default as Image} from './Image/Image'
+export {default as LazyImage} from './LazyImage/LazyImage'

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import * as T from 'prop-types'
-import Image from '../Image'
+import Image from '../Image/Image'
 import * as scrollService from './scrollService'
 import throttle from 'lodash.throttle'
 
