@@ -1,5 +1,5 @@
 {
-  "name": "lazy-image-loader",
+  "name": "react-lay-z-image",
   "description": "fade in image on load, show custom error image on error, dont load image until within view",
   "version": "0.0.62",
   "license": "MIT",
