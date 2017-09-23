@@ -1,7 +1,7 @@
 {
   "name": "react-lay-z-image",
   "description": "fade in image on load, show custom error image on error, dont load image until within view",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "./src/index.js",
   "dependencies": {
